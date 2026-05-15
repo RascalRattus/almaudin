@@ -33,30 +33,52 @@ setupAccordion('triggerMslearn', 'bodyMslearn');
 
 const container = document.getElementById('snippetContainer');
 
+const fallbackSnippets = [
+  { text: "=LET(data,FILTER(A:A,B:B=\"Active\"),SORT(data))", type: "excel" },
+  { text: "SELECT * FROM sales WHERE revenue > 100000;", type: "sql" },
+  { text: "df.groupby(\"region\")[\"revenue\"].sum()", type: "python" },
+  { text: "kubectl get nodes", type: "terminal" },
+  { text: "^[A-Za-z0-9._%+-]+@[A-Za-z0-9.-]+$", type: "regex" }
+];
+
 async function initSnippets() {
   if (!container) return;
 
+  let snippets = fallbackSnippets;
+
   try {
     const response = await fetch('/api/snippets');
-    const snippets = await response.json();
-
-    if (snippets && Array.isArray(snippets)) {
-      function createSnippet() {
-        const s = snippets[Math.floor(Math.random() * snippets.length)];
-        const el = document.createElement('div');
-        el.className = `snippet ${s.type}`;
-        el.textContent = s.text;
-        el.style.left = Math.random() * 80 + '%';
-        el.style.top = Math.random() * 80 + '%';
-        el.style.animationDelay = Math.random() * 2 + 's';
-        container.appendChild(el);
-        setTimeout(() => el.remove(), 4000);
-      }
-      setInterval(createSnippet, 800);
+    if (response.ok) {
+      const data = await response.json();
+      if (data && Array.isArray(data)) snippets = data;
     }
   } catch (error) {
-    console.error('Failed to load snippets:', error);
+    console.warn('Using fallback snippets due to API error:', error.message);
   }
+
+  function createSnippet() {
+    const s = snippets[Math.floor(Math.random() * snippets.length)];
+    const el = document.createElement('div');
+    el.className = `snippet ${s.type}`;
+    el.textContent = s.text;
+    
+    // Random positioning within container
+    const x = Math.random() * 70; // Stay away from right edge
+    const y = Math.random() * 80;
+    
+    el.style.left = x + '%';
+    el.style.top = y + '%';
+    el.style.animationDelay = Math.random() * 2 + 's';
+    
+    container.appendChild(el);
+    setTimeout(() => el.remove(), 4000);
+  }
+
+  // Initial burst
+  for(let i=0; i<3; i++) setTimeout(createSnippet, i * 300);
+  
+  // Continuous loop
+  setInterval(createSnippet, 1200);
 }
 
 initSnippets();

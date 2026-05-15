@@ -186,7 +186,8 @@ footer {
   #hero         { grid-template-columns: 1fr; }
   #hero::before { display: none; }
   .hero-left    { padding: 7rem 1.5rem 3rem; }
-  .hero-right   { padding: 2rem 1.5rem; border-top: 1px solid var(--line); }
+  .hero-right   { padding: 1rem 1.5rem; height: 350px; border-top: 1px solid var(--surface-border); }
+  .snippet      { font-size: 0.6rem; padding: 0.5rem 1rem; }
   .vault-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
   footer        { flex-direction: column; gap: .75rem; text-align: center; padding: 2rem 1.5rem; }
   .hero-bg-text { display: none; }
