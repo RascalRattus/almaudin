@@ -417,6 +417,7 @@ section {
   background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 60%);
   opacity: 0;
   transition: opacity 0.4s;
+  pointer-events: none;
 }
 
 .badge-card:hover {
