@@ -12,7 +12,7 @@
 .hero-grid {
   position: absolute;
   inset: 0;
-  background-image: 
+  background-image:
     linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
   background-size: 60px 60px;
@@ -25,8 +25,13 @@
 }
 
 @keyframes gridMove {
-  from { background-position: 0 0; }
-  to { background-position: 0 60px; }
+  from {
+    background-position: 0 0;
+  }
+
+  to {
+    background-position: 0 60px;
+  }
 }
 
 .hero-content {
@@ -67,10 +72,13 @@
   background: linear-gradient(90deg, var(--accent), transparent);
 }
 
+/* ─── FIX: Hero name — safe clamp for 320px–1920px ─── */
+/* BEFORE: clamp(3.5rem, 8vw, 6.5rem) — 3.5rem=56px too big on 320px
+   AFTER:  clamp(2.4rem, 9vw, 6.5rem) — 2.4rem=38px safe on 320px */
 .hero-name {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(3.5rem, 8vw, 6.5rem);
-  line-height: 0.9;
+  font-size: clamp(2.4rem, 9vw, 6.5rem);
+  line-height: 0.95;
   font-weight: 700;
   letter-spacing: -0.04em;
   margin-bottom: 1.5rem;
@@ -80,11 +88,14 @@
   background: linear-gradient(to bottom, #fff 30%, var(--ink-dim));
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
+  /* FIX: prevent oversized text from causing overflow */
+  word-break: break-word;
+  overflow-wrap: break-word;
 }
 
 .hero-title {
   font-family: 'Playfair Display', serif;
-  font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+  font-size: clamp(1rem, 2.5vw, 1.8rem);
   font-weight: 400;
   font-style: italic;
   color: var(--accent-2);
@@ -95,7 +106,7 @@
 }
 
 .hero-desc {
-  font-size: 1rem;
+  font-size: clamp(0.875rem, 2vw, 1rem);
   color: var(--ink-dim);
   max-width: 500px;
   margin-bottom: 3.5rem;
@@ -105,16 +116,22 @@
   animation: premiumFadeUp 0.8s 0.8s forwards var(--ease-premium);
 }
 
+/* ─── FIX: hero CTA wraps gracefully on mobile ─── */
+/* BEFORE: gap: 1.5rem, no flex-wrap — buttons overflow on 320px
+   AFTER:  flex-wrap + smaller gap + white-space: nowrap on buttons */
 .hero-cta {
   display: flex;
-  gap: 1.5rem;
+  flex-wrap: wrap;
+  gap: 1rem;
   opacity: 0;
   transform: translateY(20px);
   animation: premiumFadeUp 0.8s 1s forwards var(--ease-premium);
 }
 
+/* BEFORE: padding: 1rem 2.5rem — too wide on small screens
+   AFTER:  padding: 0.875rem 2rem + white-space: nowrap */
 .btn-primary {
-  padding: 1rem 2.5rem;
+  padding: 0.875rem 2rem;
   background: #fff;
   color: #000;
   font-weight: 600;
@@ -124,6 +141,7 @@
   letter-spacing: 0.05em;
   transition: all 0.3s var(--ease-premium);
   box-shadow: 0 10px 20px rgba(255, 255, 255, 0.1);
+  white-space: nowrap;
 }
 
 .btn-primary:hover {
@@ -132,7 +150,7 @@
 }
 
 .btn-outline {
-  padding: 1rem 2.5rem;
+  padding: 0.875rem 2rem;
   border: 1px solid var(--surface-border);
   color: var(--ink);
   font-weight: 500;
@@ -143,6 +161,7 @@
   background: rgba(255, 255, 255, 0.03);
   backdrop-filter: blur(10px);
   transition: all 0.3s var(--ease-premium);
+  white-space: nowrap;
 }
 
 .btn-outline:hover {
@@ -152,8 +171,15 @@
 }
 
 /* ─── CONTACT ─── */
-#contact .section-subtitle { margin: 0 auto 3rem; }
-.contact-inner { max-width: 600px; margin: 0 auto; }
+#contact .section-subtitle {
+  margin: 0 auto 3rem;
+}
+
+.contact-inner {
+  max-width: 600px;
+  margin: 0 auto;
+}
+
 .contact-link-group {
   display: flex;
   flex-direction: column;
@@ -176,26 +202,193 @@ footer {
   text-transform: uppercase;
   background: var(--bg);
 }
-.footer-version { color: var(--accent); }
 
-/* ─── RESPONSIVE ─── */
-@media (max-width: 900px) {
-  #navbar           { padding: 1rem 1.5rem; }
-  #navbar.scrolled  { padding: .75rem 1.5rem; }
-  section       { padding: 5rem 1.5rem; }
-  #hero         { grid-template-columns: 1fr; }
-  #hero::before { display: none; }
-  .hero-left    { padding: 7rem 1.5rem 3rem; }
-  .hero-right   { padding: 1rem 1.5rem; height: 350px; border-top: 1px solid var(--surface-border); }
-  .snippet      { font-size: 0.6rem; padding: 0.5rem 1rem; }
-  .vault-grid   { grid-template-columns: 1fr; gap: 2.5rem; }
-  footer        { flex-direction: column; gap: .75rem; text-align: center; padding: 2rem 1.5rem; }
-  .hero-bg-text { display: none; }
-  .achievement-summary { flex-direction: column; gap: 1.5rem !important; }
-  .achievement-summary > div:last-child { margin-left: 0 !important; }
+.footer-version {
+  color: var(--accent);
 }
-@media (max-width: 650px) {
-  .nav-links              { gap: 1.25rem; }
-  .nav-links a            { font-size: .65rem; letter-spacing: .08em; }
-  .badge-grid             { grid-template-columns: 1fr; }
+
+/* ═══════════════════════════════════════════════
+   RESPONSIVE — professional breakpoint cascade
+   1920 → 1440 → 1024 → 900 → 820 → 768 →
+   650 → 480 → 360 → 320
+═══════════════════════════════════════════════ */
+
+/* ─── Wide tablet: 1024px ─── */
+@media (max-width: 1024px) {
+  .hero-content {
+    gap: 2.5rem;
+  }
+}
+
+/* ─── Tablet: 900px ─── */
+@media (max-width: 900px) {
+  #navbar {
+    padding: 0.875rem 1.5rem;
+  }
+
+  #navbar.scrolled {
+    padding: 0.625rem 1.5rem;
+  }
+
+  section {
+    padding: 5rem 1.5rem;
+  }
+
+  /* CRITICAL FIX: hero switches to single column
+     BEFORE: #hero { grid-template-columns: 1fr } — wrong target element!
+     AFTER:  .hero-content { grid-template-columns: 1fr } — correct */
+  .hero-content {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  #hero {
+    padding-top: calc(var(--nav-height) + 1rem);
+  }
+
+  #hero::before {
+    display: none;
+  }
+
+  .hero-left {
+    padding: 4rem 0 1rem;
+  }
+
+  .hero-right {
+    padding: 1rem 0;
+    height: 300px;
+    border-top: 1px solid var(--surface-border);
+  }
+
+  .snippet {
+    font-size: 0.6rem;
+    padding: 0.5rem 1rem;
+  }
+
+  /* FIX Vault: BEFORE jumps straight to 1fr on 900px — too early
+     AFTER: stays 2-col on tablet for smoother experience */
+  .vault-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+
+  footer {
+    flex-direction: column;
+    gap: .75rem;
+    text-align: center;
+    padding: 2rem 1.5rem;
+  }
+
+  .hero-bg-text {
+    display: none;
+  }
+
+  .achievement-summary {
+    flex-direction: column;
+    gap: 1.5rem !important;
+  }
+
+  .achievement-summary>div:last-child {
+    margin-left: 0 !important;
+  }
+}
+
+/* ─── Tablet-small: 768px ─── */
+@media (max-width: 768px) {
+  section {
+    padding: 4rem 1.25rem;
+  }
+
+  .hero-left {
+    padding: 3rem 0 0.75rem;
+  }
+
+  .hero-right {
+    height: 240px;
+  }
+
+  .hero-desc {
+    max-width: 100%;
+    margin-bottom: 2.5rem;
+  }
+
+  /* Vault: 1 col on smaller tablets */
+  .vault-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+}
+
+/* ─── Mobile: 480px ─── */
+@media (max-width: 480px) {
+  section {
+    padding: 3.5rem 1rem;
+  }
+
+  #hero {
+    padding: calc(var(--nav-height) + 0.5rem) 1rem 2rem;
+    min-height: 100svh;
+  }
+
+  .hero-left {
+    padding: 2.5rem 0 0.5rem;
+  }
+
+  .hero-right {
+    display: none;
+  }
+
+  .hero-eyebrow {
+    font-size: 0.6rem;
+    letter-spacing: 0.2em;
+    margin-bottom: 1rem;
+  }
+
+  .hero-desc {
+    margin-bottom: 2rem;
+  }
+
+  footer {
+    font-size: 0.55rem;
+    padding: 1.75rem 1rem;
+  }
+}
+
+/* ─── Mobile: 360px ─── */
+@media (max-width: 360px) {
+  section {
+    padding: 3rem 0.875rem;
+  }
+
+  #hero {
+    padding: calc(var(--nav-height) + 0.5rem) 0.875rem 1.5rem;
+  }
+
+  .hero-left {
+    padding: 2rem 0 0.5rem;
+  }
+
+  .hero-cta {
+    flex-direction: column;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    text-align: center;
+    width: 100%;
+    justify-content: center;
+    padding: 0.875rem 1.5rem;
+  }
+}
+
+/* ─── Mobile-XS: 320px ─── */
+@media (max-width: 320px) {
+  section {
+    padding: 2.5rem 0.75rem;
+  }
+
+  #hero {
+    padding: calc(var(--nav-height) + 0.25rem) 0.75rem 1.25rem;
+  }
 }

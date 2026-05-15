@@ -1,7 +1,37 @@
+/* ─── HAMBURGER MENU TOGGLE ─── */
+const hamburger = document.getElementById('navHamburger');
+const navLinks = document.getElementById('navLinks');
+
+if (hamburger && navLinks) {
+  hamburger.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    hamburger.classList.toggle('open', isOpen);
+    hamburger.setAttribute('aria-expanded', isOpen);
+  });
+
+  /* Close menu when a nav link is clicked */
+  navLinks.querySelectorAll('a').forEach(link => {
+    link.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  /* Close menu when clicking outside */
+  document.addEventListener('click', (e) => {
+    if (!hamburger.contains(e.target) && !navLinks.contains(e.target)) {
+      navLinks.classList.remove('open');
+      hamburger.classList.remove('open');
+      hamburger.setAttribute('aria-expanded', 'false');
+    }
+  });
+}
+
 /* ─── ACCORDION ─── */
 function setupAccordion(triggerId, bodyId) {
   const trigger = document.getElementById(triggerId);
-  const body    = document.getElementById(bodyId);
+  const body = document.getElementById(bodyId);
   if (!trigger || !body) return;
 
   trigger.addEventListener('click', () => {
@@ -24,7 +54,7 @@ function setupAccordion(triggerId, bodyId) {
   });
 }
 setupAccordion('triggerHarisenin', 'bodyHarisenin');
-setupAccordion('triggerDqlab',   'bodyDqlab');
+setupAccordion('triggerDqlab', 'bodyDqlab');
 setupAccordion('triggerMslearn', 'bodyMslearn');
 
 /* ─── INTERACTIVE FEATURES ─── */
@@ -61,22 +91,22 @@ async function initSnippets() {
     const el = document.createElement('div');
     el.className = `snippet ${s.type}`;
     el.textContent = s.text;
-    
+
     // Random positioning within container
     const x = Math.random() * 70; // Stay away from right edge
     const y = Math.random() * 80;
-    
+
     el.style.left = x + '%';
     el.style.top = y + '%';
     el.style.animationDelay = Math.random() * 2 + 's';
-    
+
     container.appendChild(el);
     setTimeout(() => el.remove(), 4000);
   }
 
   // Initial burst
-  for(let i=0; i<3; i++) setTimeout(createSnippet, i * 300);
-  
+  for (let i = 0; i < 3; i++) setTimeout(createSnippet, i * 300);
+
   // Continuous loop
   setInterval(createSnippet, 1200);
 }
