@@ -29,23 +29,37 @@ setupAccordion('triggerMslearn', 'bodyMslearn');
 
 /* ─── INTERACTIVE FEATURES ─── */
 // Snippet Animation Logic
-// Note: 'snippets' array is loaded via data.js
+// Note: 'snippets' are now fetched from the backend API
 
 const container = document.getElementById('snippetContainer');
-if (container && typeof snippets !== 'undefined') {
-  function createSnippet() {
-    const s = snippets[Math.floor(Math.random() * snippets.length)];
-    const el = document.createElement('div');
-    el.className = `snippet ${s.type}`;
-    el.textContent = s.text;
-    el.style.left = Math.random() * 80 + '%';
-    el.style.top = Math.random() * 80 + '%';
-    el.style.animationDelay = Math.random() * 2 + 's';
-    container.appendChild(el);
-    setTimeout(() => el.remove(), 4000);
+
+async function initSnippets() {
+  if (!container) return;
+
+  try {
+    const response = await fetch('/api/snippets');
+    const snippets = await response.json();
+
+    if (snippets && Array.isArray(snippets)) {
+      function createSnippet() {
+        const s = snippets[Math.floor(Math.random() * snippets.length)];
+        const el = document.createElement('div');
+        el.className = `snippet ${s.type}`;
+        el.textContent = s.text;
+        el.style.left = Math.random() * 80 + '%';
+        el.style.top = Math.random() * 80 + '%';
+        el.style.animationDelay = Math.random() * 2 + 's';
+        container.appendChild(el);
+        setTimeout(() => el.remove(), 4000);
+      }
+      setInterval(createSnippet, 800);
+    }
+  } catch (error) {
+    console.error('Failed to load snippets:', error);
   }
-  setInterval(createSnippet, 800);
 }
+
+initSnippets();
 
 // Magnetic Buttons
 const buttons = document.querySelectorAll('.btn-primary, .btn-outline, .lang-btn');
