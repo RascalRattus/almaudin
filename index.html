@@ -9,10 +9,18 @@
   <link
     href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=DM+Sans:wght@300;400;500&family=DM+Mono:wght@400;500&display=swap"
     rel="stylesheet" />
-  <link rel="stylesheet" href="assets/css/style.css" />
+  <!-- Premium Styles -->
+  <link rel="stylesheet" href="assets/css/main.css" />
 </head>
 
 <body>
+  <!-- ─── AMBIENT SYSTEM ─── -->
+  <div class="ambient-container">
+    <div class="noise-overlay"></div>
+    <div class="glow-mesh"></div>
+    <div class="cursor-glow" id="cursorGlow"></div>
+  </div>
+
   <div id="progress-bar"></div>
 
   <!-- ─── NAV ─── -->
@@ -32,59 +40,55 @@
      HERO
 ════════════════════════════════════════════════ -->
   <section id="hero">
-    <div class="hero-left">
-      <p class="hero-eyebrow" data-en="Systems & Data Professional" data-id="Profesional Sistem & Data">Profesional
-        Sistem & Data</p>
-      <h1 class="hero-name">Almaudin</h1>
-      <p class="hero-title" data-en="Systems Architect · Data Analyst · Educator"
-        data-id="Arsitek Sistem · Analis Data · Edukator">Arsitek Sistem · Analis Data · Edukator</p>
-      <p class="hero-desc"
-        data-en="Experienced professional specializing in data systems, digital governance, and intelligent automation. Certified by Microsoft and Google with proven expertise in building efficient, reliable infrastructure."
-        data-id="Profesional berpengalaman yang mengkhususkan diri dalam sistem data, tata kelola digital, dan otomasi cerdas. Bersertifikat Microsoft dan Google dengan keahlian terbukti dalam membangun infrastruktur yang efisien dan andal.">
-        Profesional berpengalaman yang mengkhususkan diri dalam sistem data, tata kelola digital, dan otomasi cerdas.
-        Bersertifikat Microsoft dan Google dengan keahlian terbukti dalam membangun infrastruktur yang efisien dan
-        andal.
-      </p>
-      <div class="hero-cta">
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="btn-primary">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
-          <span data-en="Connect on LinkedIn" data-id="Terhubung di LinkedIn">Terhubung di LinkedIn</span>
-        </a>
-        <a href="#credentials" class="btn-outline">
-          <span data-en="View Credentials" data-id="Lihat Kredensial">Lihat Kredensial</span>
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </a>
+    <div class="hero-grid"></div>
+    <div class="hero-content">
+      <div class="hero-left">
+        <p class="hero-eyebrow" data-en="Systems & Data Architect" data-id="Arsitek Sistem & Data">Systems & Data
+          Architect</p>
+        <h1 class="hero-name">Almaudin</h1>
+        <p class="hero-title" data-en="Engineering Precision through Intelligent Automation"
+          data-id="Membangun Presisi melalui Otomasi Cerdas">Engineering Precision through Intelligent Automation</p>
+        <p class="hero-desc"
+          data-en="Certified Microsoft & Google professional crafting elite data infrastructure, high-performance Excel systems, and AI-driven workflows."
+          data-id="Profesional bersertifikat Microsoft & Google yang membangun infrastruktur data elit, sistem Excel performa tinggi, dan alur kerja berbasis AI.">
+          Certified Microsoft & Google professional crafting elite data infrastructure, high-performance Excel systems,
+          and AI-driven workflows.
+        </p>
+        <div class="hero-cta">
+          <a href="https://www.linkedin.com/in/almaudin/" target="_blank" rel="noreferrer" class="btn-primary">
+            <span data-en="Connect" data-id="Terhubung">Connect</span>
+          </a>
+          <a href="#credentials" class="btn-outline">
+            <span data-en="Credentials" data-id="Kredensial">Credentials</span>
+          </a>
+        </div>
       </div>
-    </div>
 
-    <div class="hero-right">
-      <div class="hero-bg-text">A</div>
-      <div class="hero-stat-grid">
-        <div class="stat-card">
-          <div class="stat-number">6</div>
-          <div class="stat-label" data-en="Certifications" data-id="Sertifikasi">Sertifikasi</div>
-          <div class="stat-sub">Microsoft & Google</div>
+      <div class="hero-right">
+        <div class="snippet-container" id="snippetContainer">
+          <!-- Snippets will be injected/animated here -->
         </div>
-        <div class="stat-card purple">
-          <div class="stat-number">#09</div>
-          <div class="stat-label" data-en="Global Rank" data-id="Peringkat Global">Peringkat Global</div>
-          <div class="stat-sub">of 55 · Stage 3</div>
-        </div>
-        <div class="stat-card purple">
-          <div class="stat-number">100<span style="font-size:.5em;vertical-align:middle">%</span></div>
-          <div class="stat-label" data-en="Logic Accuracy" data-id="Akurasi Logika">Akurasi Logika</div>
-          <div class="stat-sub" data-en="Verified Consistency" data-id="Konsistensi Terverifikasi">Konsistensi
-            Terverifikasi</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">3+</div>
-          <div class="stat-label" data-en="Core Domains" data-id="Domain Utama">Domain Utama</div>
-          <div class="stat-sub" data-en="Data · Systems · Gov" data-id="Data · Sistem · Gov">Data · Sistem · Gov</div>
+        <div class="hero-stat-grid">
+          <div class="stat-card">
+            <div class="stat-number">6+</div>
+            <div class="stat-label" data-en="Certifications" data-id="Sertifikasi">Certifications</div>
+            <div class="stat-sub">Microsoft & Google</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">#09</div>
+            <div class="stat-label" data-en="Global Rank" data-id="Peringkat Global">Global Rank</div>
+            <div class="stat-sub">Stage 3 Finalist</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">100%</div>
+            <div class="stat-label" data-en="Logic Accuracy" data-id="Akurasi Logika">Logic Accuracy</div>
+            <div class="stat-sub">Verified Systems</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-number">35+</div>
+            <div class="stat-label" data-en="Data Modules" data-id="Modul Data">Data Modules</div>
+            <div class="stat-sub">DQLab Certified</div>
+          </div>
         </div>
       </div>
     </div>
@@ -94,362 +98,233 @@
      CREDENTIALS
 ════════════════════════════════════════════════ -->
   <section id="credentials">
-    <div class="credentials-inner">
-      <div class="reveal">
-        <p class="section-label" data-en="Verified Credentials" data-id="Kredensial Terverifikasi">Kredensial
-          Terverifikasi</p>
-        <h2 class="section-title" data-en="Certifications" data-id="Sertifikasi">Sertifikasi</h2>
-        <p class="section-subtitle"
-          data-en="Industry-recognized credentials from Microsoft and Google, validating expertise across productivity, data tools, and digital education."
-          data-id="Kredensial yang diakui industri dari Microsoft dan Google, memvalidasi keahlian di bidang produktivitas, alat data, dan pendidikan digital.">
-          Kredensial yang diakui industri dari Microsoft dan Google, memvalidasi keahlian di bidang produktivitas, alat
-          data, dan pendidikan digital.
-        </p>
+    <div class="reveal">
+      <p class="section-label" data-en="Verified Credentials" data-id="Kredensial Terverifikasi">Verified Credentials
+      </p>
+      <h2 class="section-title" data-en="Elite Certifications" data-id="Sertifikasi Elit">Elite Certifications</h2>
+      <p class="section-subtitle"
+        data-en="Industry-leading validation from Microsoft and Google, specializing in advanced data systems and AI education."
+        data-id="Validasi industri terkemuka dari Microsoft dan Google, mengkhususkan diri dalam sistem data tingkat lanjut dan pendidikan AI.">
+        Industry-leading validation from Microsoft and Google, specializing in advanced data systems and AI education.
+      </p>
+    </div>
+
+    <div class="badge-grid reveal">
+      <!-- Excel Expert -->
+      <div class="badge-card">
+        <div class="badge-img-wrap">
+          <img src="assets/img/badge-excel-expert.jpg" alt="Excel Expert" />
+        </div>
+        <div class="badge-issuer ms">Microsoft</div>
+        <h3 class="badge-name">Office Specialist: Excel Expert</h3>
+        <p class="badge-valid">Microsoft 365 Certified</p>
+        <div class="badge-footer">
+          <a href="https://www.credly.com/badges/764859d0-e11e-4176-a7f4-34d83f913cc0" target="_blank"
+            class="badge-verify-link">Verify</a>
+        </div>
       </div>
 
-      <div class="badge-grid reveal">
-
-        <!-- ── Microsoft Excel Expert (local image) ── -->
-        <div class="badge-card">
-          <div class="badge-img-wrap">
-            <img src="images/badge-excel-expert.jpg" alt="Microsoft Office Specialist: Excel Expert"
-              onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'font-family:DM Mono,monospace;font-size:.7rem;letter-spacing:.1em;color:var(--ink-3);text-transform:uppercase\'>📊 Excel Expert</div>'" />
-          </div>
-          <div class="badge-body">
-            <div class="badge-issuer ms">Microsoft · Credly</div>
-            <div class="badge-name">Microsoft Office Specialist: Excel Expert
-              <span style="font-size:.8em;font-weight:400;font-style:italic;">(Microsoft 365 Apps)</span>
-            </div>
-            <div class="badge-footer">
-              <div class="badge-verified">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-                <span data-en="Microsoft Verified" data-id="Terverifikasi Microsoft">Terverifikasi Microsoft</span>
-              </div>
-              <a href="https://www.credly.com/badges/764859d0-e11e-4176-a7f4-34d83f913cc0" target="_blank"
-                rel="noreferrer" class="badge-verify-link" data-en="Verify ↗" data-id="Verifikasi ↗">Verifikasi ↗</a>
-            </div>
-          </div>
+      <!-- Gemini Educator -->
+      <div class="badge-card">
+        <div class="badge-img-wrap">
+          <img src="https://pdf.ms.credential.net/badge/image?env=production&credential=k9p2x77i"
+            alt="Gemini Educator" />
         </div>
-
-        <!-- ── Microsoft Excel Associate (local image) ── -->
-        <div class="badge-card">
-          <div class="badge-img-wrap">
-            <img src="images/badge-excel-associate.jpg" alt="Microsoft Office Specialist: Excel Associate"
-              onerror="this.style.display='none';this.parentElement.innerHTML='<div style=\'font-family:DM Mono,monospace;font-size:.7rem;letter-spacing:.1em;color:var(--ink-3);text-transform:uppercase\'>📊 Excel Associate</div>'" />
-          </div>
-          <div class="badge-body">
-            <div class="badge-issuer ms">Microsoft · Credly</div>
-            <div class="badge-name">Microsoft Office Specialist: Excel Associate
-              <span style="font-size:.8em;font-weight:400;font-style:italic;">(Microsoft 365 Apps)</span>
-            </div>
-            <div class="badge-footer">
-              <div class="badge-verified">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-                <span data-en="Microsoft Verified" data-id="Terverifikasi Microsoft">Terverifikasi Microsoft</span>
-              </div>
-              <a href="https://www.credly.com/badges/8cc96cd0-94ce-4b62-b3ec-ce759310b265" target="_blank"
-                rel="noreferrer" class="badge-verify-link" data-en="Verify ↗" data-id="Verifikasi ↗">Verifikasi ↗</a>
-            </div>
-          </div>
+        <div class="badge-issuer google">Google</div>
+        <h3 class="badge-name">Gemini Certified Educator</h3>
+        <p class="badge-valid">AI & Education Systems</p>
+        <div class="badge-footer">
+          <a href="https://www.credential.net/d8c7cc33-d3ef-40c0-a054-42d44937a0e7" target="_blank"
+            class="badge-verify-link">Verify</a>
         </div>
+      </div>
 
-        <!-- ── Gemini Certified Educator ── -->
-        <div class="badge-card google-card">
-          <div class="badge-img-wrap">
-            <a href="https://www.credential.net/d8c7cc33-d3ef-40c0-a054-42d44937a0e7" target="_blank" rel="noreferrer"
-              class="badge-img-link">
-              <img src="https://pdf.ms.credential.net/badge/image?env=production&credential=k9p2x77i"
-                alt="Gemini Certified Educator"
-                onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-family:DM Mono,monospace;font-size:.7rem;letter-spacing:.1em;color:var(--ink-3)\'>🎓 Gemini Educator</span>'" />
-            </a>
-          </div>
-          <div class="badge-body">
-            <div class="badge-issuer google">Google for Education</div>
-            <div class="badge-name">Gemini Certified Educator</div>
-            <div class="badge-valid" data-en="Valid: Apr 2026 – Apr 2029" data-id="Berlaku: Apr 2026 – Apr 2029">
-              Berlaku: Apr 2026 – Apr 2029</div>
-            <div class="badge-footer">
-              <div class="badge-verified">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-                <span data-en="Google Verified" data-id="Terverifikasi Google">Terverifikasi Google</span>
-              </div>
-              <a href="https://www.credential.net/d8c7cc33-d3ef-40c0-a054-42d44937a0e7" target="_blank" rel="noreferrer"
-                class="badge-verify-link" data-en="Verify ↗" data-id="Verifikasi ↗">Verifikasi ↗</a>
-            </div>
-          </div>
+      <!-- Excel Associate -->
+      <div class="badge-card">
+        <div class="badge-img-wrap">
+          <img src="assets/img/badge-excel-associate.jpg" alt="Excel Associate" />
         </div>
-
-        <!-- ── Google Certified Educator Level 1 ── -->
-        <div class="badge-card google-card">
-          <div class="badge-img-wrap">
-            <a href="https://www.credential.net/237db9ae-aaf9-4dd6-981f-053169a2bbb4" target="_blank" rel="noreferrer"
-              class="badge-img-link">
-              <img src="https://pdf.ms.credential.net/badge/image?env=production&credential=2jluxqsi"
-                alt="Google Certified Educator Level 1"
-                onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-family:DM Mono,monospace;font-size:.7rem;letter-spacing:.1em;color:var(--ink-3)\'>🎓 Edu Level 1</span>'" />
-            </a>
-          </div>
-          <div class="badge-body">
-            <div class="badge-issuer google">Google for Education</div>
-            <div class="badge-name" data-en="Google Certified Educator Level 1"
-              data-id="Pendidik Tersertifikasi Google Level 1">Pendidik Tersertifikasi Google Level 1</div>
-            <div class="badge-valid" data-en="Valid: Apr 2026 – Apr 2029" data-id="Berlaku: Apr 2026 – Apr 2029">
-              Berlaku: Apr 2026 – Apr 2029</div>
-            <div class="badge-footer">
-              <div class="badge-verified">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-                <span data-en="Google Verified" data-id="Terverifikasi Google">Terverifikasi Google</span>
-              </div>
-              <a href="https://www.credential.net/237db9ae-aaf9-4dd6-981f-053169a2bbb4" target="_blank" rel="noreferrer"
-                class="badge-verify-link" data-en="Verify ↗" data-id="Verifikasi ↗">Verifikasi ↗</a>
-            </div>
-          </div>
+        <div class="badge-issuer ms">Microsoft</div>
+        <h3 class="badge-name">Office Specialist: Excel Associate</h3>
+        <p class="badge-valid">Core Data Management</p>
+        <div class="badge-footer">
+          <a href="https://www.credly.com/badges/8cc96cd0-94ce-4b62-b3ec-ce759310b265" target="_blank"
+            class="badge-verify-link">Verify</a>
         </div>
+      </div>
 
-        <!-- ── Google Certified Educator Level 2 ── -->
-        <div class="badge-card google-card">
-          <div class="badge-img-wrap">
-            <a href="https://www.credential.net/0589a8c2-72d8-4e07-b82e-1270dc347c64" target="_blank" rel="noreferrer"
-              class="badge-img-link">
-              <img src="https://pdf.ms.credential.net/badge/image?env=production&credential=vmf5lrum"
-                alt="Google Certified Educator Level 2"
-                onerror="this.style.display='none';this.parentElement.innerHTML='<span style=\'font-family:DM Mono,monospace;font-size:.7rem;letter-spacing:.1em;color:var(--ink-3)\'>🎓 Edu Level 2</span>'" />
-            </a>
-          </div>
-          <div class="badge-body">
-            <div class="badge-issuer google">Google for Education</div>
-            <div class="badge-name">Google Certified Educator Level 2</div>
-            <div class="badge-valid" data-en="Valid: Apr 2026 – Apr 2029" data-id="Berlaku: Apr 2026 – Apr 2029">
-              Berlaku: Apr 2026 – Apr 2029</div>
-            <div class="badge-footer">
-              <div class="badge-verified">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-                <span data-en="Google Verified" data-id="Terverifikasi Google">Terverifikasi Google</span>
-              </div>
-              <a href="https://www.credential.net/0589a8c2-72d8-4e07-b82e-1270dc347c64" target="_blank" rel="noreferrer"
-                class="badge-verify-link" data-en="Verify ↗" data-id="Verifikasi ↗">Verifikasi ↗</a>
-            </div>
-          </div>
+      <!-- Google Educator L1 -->
+      <div class="badge-card">
+        <div class="badge-img-wrap">
+          <img src="https://pdf.ms.credential.net/badge/image?env=production&credential=2jluxqsi"
+            alt="Google Educator L1" />
         </div>
-
-        <!-- ── Google Trainer Skills Assessment (TSA) ── -->
-        <div class="badge-card google-card">
-          <div class="badge-img-wrap">
-            <!--
-            TSA image from JSON:
-            "image": "https://pdf.ms.credential.net/v2/certificate/image?env=production&credential=ouzkcu4y&variant=medium"
-            Falls back to styled text placeholder if image fails to load.
-          -->
-            <a href="https://www.credential.net/2c8891d7-6c98-4010-8585-97771e641469" target="_blank" rel="noreferrer"
-              class="badge-img-link">
-              <img
-                src="https://pdf.ms.credential.net/v2/certificate/image?env=production&credential=ouzkcu4y&variant=medium"
-                alt="Trainer Skills Assessment"
-                onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
-              <!-- text fallback (hidden unless img fails) -->
-              <div class="badge-placeholder" style="display:none;">
-                <div class="tsa-title">Trainer Skills<br>Assessment</div>
-                <div class="tsa-score">Score 95 / 100</div>
-                <div class="tsa-issuer">Google for Education</div>
-              </div>
-            </a>
-          </div>
-          <div class="badge-body">
-            <div class="badge-issuer google">Google for Education</div>
-            <div class="badge-name">Trainer Skills Assessment</div>
-            <div class="badge-valid" data-en="Valid: Apr 2026 – Apr 2029" data-id="Berlaku: Apr 2026 – Apr 2029">
-              Berlaku: Apr 2026 – Apr 2029</div>
-            <div class="badge-footer">
-              <div class="badge-verified">
-                <svg width="11" height="11" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
-                  <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-                  <polyline points="22 4 12 14.01 9 11.01" />
-                </svg>
-                <span data-en="Google Verified" data-id="Terverifikasi Google">Terverifikasi Google</span>
-              </div>
-              <a href="https://www.credential.net/2c8891d7-6c98-4010-8585-97771e641469" target="_blank" rel="noreferrer"
-                class="badge-verify-link" data-en="Verify ↗" data-id="Verifikasi ↗">Verifikasi ↗</a>
-            </div>
-          </div>
+        <div class="badge-issuer google">Google</div>
+        <h3 class="badge-name">Certified Educator Level 1</h3>
+        <p class="badge-valid">Digital Productivity</p>
+        <div class="badge-footer">
+          <a href="https://www.credential.net/237db9ae-aaf9-4dd6-981f-053169a2bbb4" target="_blank"
+            class="badge-verify-link">Verify</a>
         </div>
+      </div>
 
-      </div><!-- /.badge-grid -->
-    </div><!-- /.credentials-inner -->
+      <!-- Google Educator L2 -->
+      <div class="badge-card">
+        <div class="badge-img-wrap">
+          <img src="https://pdf.ms.credential.net/badge/image?env=production&credential=vmf5lrum"
+            alt="Google Educator L2" />
+        </div>
+        <div class="badge-issuer google">Google</div>
+        <h3 class="badge-name">Certified Educator Level 2</h3>
+        <p class="badge-valid">Advanced Cloud Workflows</p>
+        <div class="badge-footer">
+          <a href="https://www.credential.net/0589a8c2-72d8-4e07-b82e-1270dc347c64" target="_blank"
+            class="badge-verify-link">Verify</a>
+        </div>
+      </div>
+
+      <!-- TSA -->
+      <div class="badge-card">
+        <div class="badge-img-wrap">
+          <img
+            src="https://pdf.ms.credential.net/v2/certificate/image?env=production&credential=ouzkcu4y&variant=medium"
+            alt="Trainer Skills Assessment" />
+        </div>
+        <div class="badge-issuer google">Google</div>
+        <h3 class="badge-name">Trainer Skills Assessment</h3>
+        <p class="badge-valid">Professional Facilitation</p>
+        <div class="badge-footer">
+          <a href="https://www.credential.net/2c8891d7-6c98-4010-8585-97771e641469" target="_blank"
+            class="badge-verify-link">Verify</a>
+        </div>
+      </div>
+    </div>
   </section>
 
   <!-- ═══════════════════════════════════════════════
      ACHIEVEMENT
 ════════════════════════════════════════════════ -->
   <section id="achievement">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="reveal" style="margin-bottom:3.5rem;">
-        <p class="section-label" data-en="Competition Record" data-id="Rekam Kompetisi">Rekam Kompetisi</p>
-        <h2 class="section-title" data-en="National Benchmarking" data-id="Benchmarking Nasional">Benchmarking Nasional
-        </h2>
-        <p class="section-subtitle"
-          data-en="Competed across 4 elimination stages at the national level — solving complex Excel formula problems under timed online conditions. Consistently advanced through each round against hundreds of participants."
-          data-id="Berkompetisi melalui 4 babak eliminasi di tingkat nasional — menyelesaikan soal formula Excel yang kompleks secara online dalam waktu terbatas. Konsisten lolos ke babak berikutnya di antara ratusan peserta.">
-          Berkompetisi melalui 4 babak eliminasi di tingkat nasional — menyelesaikan soal formula Excel yang kompleks
-          secara online dalam waktu terbatas. Konsisten lolos ke babak berikutnya di antara ratusan peserta.
-        </p>
+    <div class="reveal">
+      <p class="section-label" data-en="Competition Record" data-id="Rekam Kompetisi">Competition Record</p>
+      <h2 class="section-title" data-en="Microsoft Excel World Championship (MEWC) Indonesia: Qualification Rounds 2025"
+        data-id="Microsoft Excel World Championship (MEWC) Indonesia: Babak Kualifikasi 2025">Microsoft Excel World
+        Championship (MEWC) Indonesia: Qualification Rounds 2025</h2>
+      <p class="section-subtitle" style="margin-bottom: 2rem;"
+        data-en="Proving data analytics and logical problem-solving expertise at a competitive scale. Beyond operating tools, this track record demonstrates the ability to design complex algorithms from unstructured datasets under strict time pressure. Consistently breaking into the top percentiles across multiple national elimination phases."
+        data-id="Membuktikan keahlian analitika data dan logical problem solving dalam skala kompetitif. Tidak sekadar mengoperasikan tools, rekam jejak ini mendemonstrasikan kemampuan merancang algoritma kompleks dari dataset yang tidak terstruktur, di bawah tekanan waktu yang ketat. Secara konsisten berhasil menembus persentil teratas di berbagai fase eliminasi nasional.">
+        Membuktikan keahlian analitika data dan logical problem solving dalam skala kompetitif. Tidak sekadar
+        mengoperasikan tools, rekam jejak ini mendemonstrasikan kemampuan merancang algoritma kompleks dari dataset yang
+        tidak terstruktur, di bawah tekanan waktu yang ketat. Secara konsisten berhasil menembus persentil teratas di
+        berbagai fase eliminasi nasional.
+      </p>
+      <div style="margin-bottom: 4rem;">
+        <a href="https://app.powerbi.com/view?r=eyJrIjoiMjk4N2QyMTQtOThjZi00ZTE4LThlZWItYTQxMDBlNjY0MTQ5IiwidCI6ImVlN2JiNGU1LTZmZTItNGQ2Ni05ZWFhLTM2NzdkZGZkZTgyZiIsImMiOjl9"
+          target="_blank" rel="noreferrer" class="badge-verify-link"
+          style="display: inline-flex; align-items: center; gap: 8px; color: var(--accent); border-color: rgba(204, 133, 184, 0.4); padding: 0.6rem 1.2rem;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+            <polyline points="15 3 21 3 21 9"></polyline>
+            <line x1="10" y1="14" x2="21" y2="3"></line>
+          </svg>
+          <span data-en="View Full Results Dashboard" data-id="Lihat Dashboard Hasil Lengkap">Lihat Dashboard Hasil
+            Lengkap</span>
+        </a>
+      </div>
+    </div>
+
+    <div class="stage-timeline reveal">
+      <!-- Stage 1 -->
+      <div class="stage-card" data-pct="40">
+        <div class="stage-pill">STAGE 1: "Bit of Music"</div>
+        <div class="stage-info">
+          <div class="stage-rank-num">#18 <span
+              style="font-size: 1.2rem; font-family: 'DM Mono', monospace; font-weight: 500; color: var(--accent-2); vertical-align: middle; margin-left: 10px;">500<span
+                style="font-size: 0.8rem; color: var(--ink-muted);">/1250</span></span></div>
+          <p><strong data-en="Top 20% of 92 Competitors" data-id="Top 20% dari 92 Kompetitor">Top 20% dari 92
+              Kompetitor</strong><br />
+            <span
+              data-en="Executed reverse engineering on digital instrument data streams. Built a processing system capable of precisely and automatically parsing and translating 24-bit standard MIDI binary transmissions into musical instructions (frequency, channel, and intensity)."
+              data-id="Melakukan reverse engineering pada aliran data instrumen digital. Membangun sistem pemrosesan yang mampu memecah dan menerjemahkan 24-bit transmisi biner standar MIDI menjadi instruksi musik (frekuensi, channel, dan intensitas) secara presisi dan otomatis.">Melakukan
+              reverse engineering pada aliran data instrumen digital. Membangun sistem pemrosesan yang mampu memecah dan
+              menerjemahkan 24-bit transmisi biner standar MIDI menjadi instruksi musik (frekuensi, channel, dan
+              intensitas) secara presisi dan otomatis.</span>
+          </p>
+        </div>
+        <div class="stage-bar-track">
+          <div class="stage-bar-fill" style="--pct:40%"></div>
+        </div>
       </div>
 
-      <div class="reveal stage-timeline">
-        <!-- Stage 1 -->
-        <div class="stage-card" data-pct="40">
-          <div class="stage-header">
-            <div class="stage-pill" data-en="Stage 1" data-id="Babak 1">Babak 1</div>
-            <div class="stage-rank">
-              <span class="stage-rank-num">#18</span>
-              <span class="stage-rank-of" data-en="of 92" data-id="dari 92">dari 92</span>
-            </div>
-          </div>
-          <div class="stage-score-row">
-            <span class="stage-score">500</span>
-            <span class="stage-score-max">/ 1250</span>
-            <span class="stage-pct-badge">Top 20%</span>
-          </div>
-          <div class="stage-bar-track">
-            <div class="stage-bar-fill" style="--pct:40%"></div>
-          </div>
-          <p class="stage-note" data-en="Advanced to Stage 2 out of 92 national competitors"
-            data-id="Bermain di babak pertama dengan total 92 peserta nasional">Bermain di babak pertama dengan total 92
-            peserta nasional</p>
+      <!-- Stage 2 -->
+      <div class="stage-card" data-pct="32">
+        <div class="stage-pill">STAGE 2: "Collecting Scarves"</div>
+        <div class="stage-info">
+          <div class="stage-rank-num">#32 <span
+              style="font-size: 1.2rem; font-family: 'DM Mono', monospace; font-weight: 500; color: var(--accent-2); vertical-align: middle; margin-left: 10px;">402<span
+                style="font-size: 0.8rem; color: var(--ink-muted);">/1250</span></span></div>
+          <p><strong data-en="Advanced through 73 National Finalists" data-id="Lolos melalui 73 Finalis Nasional">Lolos
+              melalui 73 Finalis Nasional</strong><br />
+            <span
+              data-en="Solved complex matrix calculations balancing spatial logistics (multi-city coordinate distances) against manufacturing inventory management. Created a decision support algorithm to identify the most economical cost options from millions of probabilities."
+              data-id="Menyelesaikan kalkulasi matriks kompleks antara logistik spasial (jarak koordinat multikota) versus manajemen inventory manufaktur. Menciptakan algoritma pendukung keputusan untuk mengidentifikasi opsi biaya terekonomis dari jutaan probabilitas.">Menyelesaikan
+              kalkulasi matriks kompleks antara logistik spasial (jarak koordinat multikota) versus manajemen inventory
+              manufaktur. Menciptakan algoritma pendukung keputusan untuk mengidentifikasi opsi biaya terekonomis dari
+              jutaan probabilitas.</span>
+          </p>
         </div>
+        <div class="stage-bar-track">
+          <div class="stage-bar-fill" style="--pct:32%"></div>
+        </div>
+      </div>
 
-        <div class="stage-connector">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
+      <!-- Stage 3 -->
+      <div class="stage-card highlight" data-pct="41">
+        <div class="stage-pill" style="display: flex; align-items: center; gap: 8px;">
+          STAGE 3 ✦ Lost Instructions
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z">
+            </path>
           </svg>
         </div>
+        <div class="stage-info">
+          <div class="stage-rank-num peak-rank">#09 <span
+              style="font-size: 1.5rem; font-family: 'DM Mono', monospace; font-weight: 500; color: var(--accent); vertical-align: middle; margin-left: 12px; text-shadow: none;">511<span
+                style="font-size: 0.9rem; color: var(--ink-dim);">/1250</span></span></div>
+          <p><strong data-en="Top 10 National - Elite Tier" data-id="Top 10 Besar Nasional - Elit Tier">Top 10 Besar
+              Nasional - Elit Tier</strong><br />
+            <span
+              data-en="Achieved a peak national score in a 'data disaster' scenario. Reconstructed lost logic rules entirely by consolidating, filtering prime numbers, and conducting cross-statistical analysis from 25 extensive datasets simultaneously."
+              data-id="Skoring puncak nasional dalam skenario &quot;bencana data&quot;. Merekonstruksi aturan logika yang hilang secara utuh dengan mengonsolidasi, menyaring bilangan prima, dan melakukan analisis statistik silang dari 25 dataset ekstensif secara bersamaan.">Skoring
+              puncak nasional dalam skenario "bencana data". Merekonstruksi aturan logika yang hilang secara utuh dengan
+              mengonsolidasi, menyaring bilangan prima, dan melakukan analisis statistik silang dari 25 dataset
+              ekstensif secara bersamaan.</span>
+          </p>
+        </div>
+        <div class="stage-bar-track">
+          <div class="stage-bar-fill" style="--pct:41%"></div>
+        </div>
+      </div>
 
-        <!-- Stage 2 -->
-        <div class="stage-card" data-pct="32">
-          <div class="stage-header">
-            <div class="stage-pill" data-en="Stage 2" data-id="Babak 2">Babak 2</div>
-            <div class="stage-rank">
-              <span class="stage-rank-num">#32</span>
-              <span class="stage-rank-of" data-en="of 73" data-id="dari 73">dari 73</span>
-            </div>
-          </div>
-          <div class="stage-score-row">
-            <span class="stage-score">402</span>
-            <span class="stage-score-max">/ 1250</span>
-            <span class="stage-pct-badge">Top 44%</span>
-          </div>
-          <div class="stage-bar-track">
-            <div class="stage-bar-fill" style="--pct:32%"></div>
-          </div>
-          <p class="stage-note" data-en="Advanced to Stage 3 — field narrowed to 73"
-            data-id="Bermain di babak kedua dengan total 73 peserta nasional">Bermain di babak kedua dengan total 73
-            peserta nasional</p>
+      <!-- Stage 4 -->
+      <div class="stage-card" data-pct="28">
+        <div class="stage-pill">STAGE 4 / WILDCARD: "PipeMare"</div>
+        <div class="stage-info">
+          <div class="stage-rank-num">#24 <span
+              style="font-size: 1.2rem; font-family: 'DM Mono', monospace; font-weight: 500; color: var(--accent-2); vertical-align: middle; margin-left: 10px;">345<span
+                style="font-size: 0.8rem; color: var(--ink-muted);">/1250</span></span></div>
+          <p><strong data-en="Top 18% of 130 Wildcard Participants" data-id="Top 18% dari 130 Peserta Wildcard">Top 18%
+              dari 130 Peserta Wildcard</strong><br />
+            <span
+              data-en="Designed a connectivity validation engine for spatial data structures. Processed geometric Unicode characters within a grid to model the directional flow of unbroken pipeline networks using advanced reference manipulation."
+              data-id="Merancang engine validasi konektivitas untuk struktur data spasial. Memproses karakter Unicode geometris di dalam grid untuk memodelkan arah aliran jaringan pipa tak terputus menggunakan manipulasi referensi tingkat lanjut.">Merancang
+              engine validasi konektivitas untuk struktur data spasial. Memproses karakter Unicode geometris di dalam
+              grid untuk memodelkan arah aliran jaringan pipa tak terputus menggunakan manipulasi referensi tingkat
+              lanjut.</span>
+          </p>
         </div>
-
-        <div class="stage-connector">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </div>
-
-        <!-- Stage 3 — highlight -->
-        <div class="stage-card highlight" data-pct="41">
-          <div class="stage-header">
-            <div class="stage-pill" data-en="Stage 3 ✦ Best Rank" data-id="Babak 3 ✦ Peringkat Terbaik">Babak 3 ✦
-              Peringkat Terbaik</div>
-            <div class="stage-rank">
-              <span class="stage-rank-num">#9</span>
-              <span class="stage-rank-of" data-en="of 55" data-id="dari 55">dari 55</span>
-            </div>
-          </div>
-          <div class="stage-score-row">
-            <span class="stage-score">511</span>
-            <span class="stage-score-max">/ 1250</span>
-            <span class="stage-pct-badge">Top 16%</span>
-          </div>
-          <div class="stage-bar-track">
-            <div class="stage-bar-fill" style="--pct:41%"></div>
-          </div>
-          <p class="stage-note" data-en="Personal best — Top 16% of remaining national finalists"
-            data-id="Peringkat terbaik — Top 16% dari finalis nasional yang tersisa">Peringkat terbaik — Top 16% dari
-            finalis nasional yang tersisa</p>
-        </div>
-
-        <div class="stage-connector">
-          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="1.5">
-            <path d="M5 12h14M12 5l7 7-7 7" />
-          </svg>
-        </div>
-
-        <!-- Stage 4 / Wildcard -->
-        <div class="stage-card" data-pct="28">
-          <div class="stage-header">
-            <div class="stage-pill" data-en="Wildcard / Stage 4" data-id="Wildcard / Babak 4">Wildcard / Babak 4</div>
-            <div class="stage-rank">
-              <span class="stage-rank-num">#24</span>
-              <span class="stage-rank-of" data-en="of 130" data-id="dari 130">dari 130</span>
-            </div>
-          </div>
-          <div class="stage-score-row">
-            <span class="stage-score">345</span>
-            <span class="stage-score-max">/ 1250</span>
-            <span class="stage-pct-badge">Top 18%</span>
-          </div>
-          <div class="stage-bar-track">
-            <div class="stage-bar-fill" style="--pct:28%"></div>
-          </div>
-          <p class="stage-note" data-en="Competed against 130 in the wildcard round — Top 18%"
-            data-id="Bersaing dengan 130 peserta di babak wildcard — Top 18%">Bersaing dengan 130 peserta di babak
-            wildcard — Top 18%</p>
-        </div>
-      </div><!-- /.stage-timeline -->
-
-      <!-- Summary Row -->
-      <div class="reveal achievement-summary" style="margin-top:3rem; padding-top:2.5rem; border-top:1px solid var(--line);
-                display:flex; gap:3rem; align-items:center; flex-wrap:wrap;">
-        <div>
-          <div
-            style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.4rem;"
-            data-en="Total Stages" data-id="Total Babak">Total Babak</div>
-          <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--ink);">4 / 4
-          </div>
-        </div>
-        <div>
-          <div
-            style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.4rem;"
-            data-en="Best Ranking" data-id="Peringkat Terbaik">Peringkat Terbaik</div>
-          <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--ink);">
-            #9 <span style="font-size:.4em;color:var(--ink-3);font-weight:400;">/ 55</span>
-          </div>
-        </div>
-        <div>
-          <div
-            style="font-family:'DM Mono',monospace;font-size:.6rem;letter-spacing:.18em;text-transform:uppercase;color:var(--ink-3);margin-bottom:.4rem;"
-            data-en="Competition Format" data-id="Format Kompetisi">Format Kompetisi</div>
-          <div style="font-family:'Playfair Display',serif;font-size:2.2rem;font-weight:700;color:var(--ink);"
-            data-en="Online · 30 Min" data-id="Online · 30 Menit">Online · 30 Menit</div>
-        </div>
-        <div style="margin-left:auto;">
-          <div class="tag-list" style="margin-top:0;">
-            <span class="tag">Excel Formula</span>
-            <span class="tag">Time Pressure</span>
-            <span class="tag">National Scale</span>
-            <span class="tag">Pure Logic</span>
-          </div>
+        <div class="stage-bar-track">
+          <div class="stage-bar-fill" style="--pct:82%"></div>
         </div>
       </div>
     </div>
@@ -459,53 +334,51 @@
      VAULT
 ════════════════════════════════════════════════ -->
   <section id="vault">
-    <div class="vault-inner">
-      <div class="reveal">
-        <p class="section-label" data-en="Professional Domains" data-id="Domain Profesional">Domain Profesional</p>
-        <h2 class="section-title" data-en="Areas of Expertise" data-id="Bidang Keahlian">Bidang Keahlian</h2>
-        <p class="section-subtitle"
-          data-en="A multidisciplinary profile spanning governance, analytics, and cutting-edge infrastructure research."
-          data-id="Profil multidisiplin yang mencakup tata kelola, analitik, dan penelitian infrastruktur mutakhir.">
-          Profil multidisiplin yang mencakup tata kelola, analitik, dan penelitian infrastruktur mutakhir.
-        </p>
+    <div class="reveal">
+      <p class="section-label" data-en="Professional Domains" data-id="Domain Profesional">Professional Domains</p>
+      <h2 class="section-title" data-en="Areas of Expertise" data-id="Bidang Keahlian">Areas of Expertise</h2>
+      <p class="section-subtitle"
+        data-en="A multidisciplinary profile bridging digital governance, advanced analytics, and AI-powered infrastructure."
+        data-id="Profil multidisiplin yang menjembatani tata kelola digital, analitik tingkat lanjut, dan infrastruktur bertenaga AI.">
+        A multidisciplinary profile bridging digital governance, advanced analytics, and AI-powered infrastructure.
+      </p>
+    </div>
+    <div class="vault-grid reveal">
+      <div class="vault-column">
+        <div class="vault-col-label">
+          <span class="dot"></span>
+          <span data-en="Governance & Compliance" data-id="Tata Kelola & Kepatuhan">Governance & Compliance</span>
+        </div>
+        <div class="vault-item" data-en="Procurement Management (PBJ) — First Level Certified"
+          data-id="Pengelola Pengadaan Barang/Jasa (PBJ) Pertama — Bersertifikat">
+          Procurement Management (PBJ)
+        </div>
+        <div class="vault-item" data-en="Treasury & Expenditure Management (Ministry of Finance)"
+          data-id="Bendahara Pengeluaran (Kementerian Keuangan)">
+          Treasury Management (Kemenkeu)
+        </div>
       </div>
-      <div class="vault-grid reveal">
-        <div>
-          <div class="vault-col-label">
-            <span class="dot"></span>
-            <span data-en="Governance & Compliance" data-id="Tata Kelola & Kepatuhan">Tata Kelola & Kepatuhan</span>
-          </div>
-          <div class="vault-item" data-en="Procurement Management (PBJ) — First Level Certified"
-            data-id="Pengelola Pengadaan Barang/Jasa (PBJ) Pertama — Bersertifikat">
-            Pengelola Pengadaan Barang/Jasa (PBJ) Pertama
-          </div>
-          <div class="vault-item" data-en="Treasury & Expenditure Management (Ministry of Finance)"
-            data-id="Bendahara Pengeluaran (Kementerian Keuangan)">
-            Bendahara Pengeluaran (Kemenkeu)
-          </div>
+      <div class="vault-column">
+        <div class="vault-col-label">
+          <span class="dot purple"></span>
+          <span data-en="Data & Analytics" data-id="Data & Analitik">Data & Analytics</span>
         </div>
-        <div>
-          <div class="vault-col-label">
-            <span class="dot purple"></span>
-            <span data-en="Data & Analytics" data-id="Data & Analitik">Data & Analitik</span>
-          </div>
-          <div class="vault-item">Advanced Data Analytics</div>
-          <div class="vault-item">SQL · Python · Power BI</div>
-          <div class="vault-item" data-en="Complex Formula Engineering (Excel)"
-            data-id="Rekayasa Formula Kompleks (Excel)">
-            Rekayasa Formula Kompleks (Excel)
-          </div>
+        <div class="vault-item">Advanced Data Analytics</div>
+        <div class="vault-item">SQL · Python · Power BI</div>
+        <div class="vault-item" data-en="Complex Formula Engineering (Excel)"
+          data-id="Rekayasa Formula Kompleks (Excel)">
+          Complex Formula Engineering
         </div>
-        <div>
-          <div class="vault-col-label">
-            <span class="dot"></span>
-            <span data-en="Systems & Infrastructure" data-id="Sistem & Infrastruktur">Sistem & Infrastruktur</span>
-          </div>
-          <div class="vault-item">Azure Semantic Kernel SDK</div>
-          <div class="vault-item">Azure Kubernetes Service (AKS)</div>
-          <div class="vault-item" data-en="AI-Powered Workflow Automation" data-id="Otomasi Alur Kerja Berbasis AI">
-            Otomasi Alur Kerja Berbasis AI
-          </div>
+      </div>
+      <div class="vault-column">
+        <div class="vault-col-label">
+          <span class="dot"></span>
+          <span data-en="Systems & Infrastructure" data-id="Sistem & Infrastruktur">Systems & Infrastructure</span>
+        </div>
+        <div class="vault-item">Azure Semantic Kernel SDK</div>
+        <div class="vault-item">Azure Kubernetes Service (AKS)</div>
+        <div class="vault-item" data-en="AI-Powered Workflow Automation" data-id="Otomasi Alur Kerja Berbasis AI">
+          AI Workflow Automation
         </div>
       </div>
     </div>
@@ -515,160 +388,297 @@
      LEARNING & DEVELOPMENT
 ════════════════════════════════════════════════ -->
   <section id="learning">
-    <div style="max-width:1100px; margin:0 auto;">
-      <div class="reveal">
-        <p class="section-label" data-en="Continuous Learning" data-id="Pembelajaran Berkelanjutan">Pembelajaran
-          Berkelanjutan</p>
-        <h2 class="section-title" data-en="Learning & Development" data-id="Pengembangan Diri">Pengembangan Diri</h2>
-        <p class="section-subtitle"
-          data-en="A self-directed learning journey across data science, cloud infrastructure, and AI — spanning platforms from DQLab to Microsoft Learn."
-          data-id="Perjalanan belajar mandiri di bidang data science, infrastruktur cloud, dan AI — dari DQLab hingga Microsoft Learn.">
-          Perjalanan belajar mandiri di bidang data science, infrastruktur cloud, dan AI — dari DQLab hingga Microsoft
-          Learn.
-        </p>
-      </div>
+    <div class="reveal">
+      <p class="section-label" data-en="Continuous Learning" data-id="Pembelajaran Berkelanjutan">Continuous Learning
+      </p>
+      <h2 class="section-title" data-en="Knowledge Systems" data-id="Sistem Pengetahuan">Knowledge Systems</h2>
+      <p class="section-subtitle"
+        data-en="A self-directed journey through advanced data science and cloud architectures — powered by elite learning platforms."
+        data-id="Perjalanan mandiri melalui data science tingkat lanjut dan arsitektur cloud — didukung oleh platform pembelajaran elit.">
+        A self-directed journey through advanced data science and cloud architectures — powered by elite learning
+        platforms.
+      </p>
+    </div>
 
-      <!-- DQLab Accordion -->
-      <div class="reveal ld-block">
-        <div class="ld-accordion">
-          <button class="ld-accordion-trigger" id="triggerDqlab" aria-expanded="false" aria-controls="bodyDqlab">
-            <div class="ld-trigger-left">
-              <div class="ld-source-pill dqlab">DQLab</div>
-              <div class="ld-preview-text" data-en="Data Science, Python, SQL, Business Analytics"
-                data-id="Data Science, Python, SQL, Analitik Bisnis">
-                Data Science, Python, SQL, Analitik Bisnis
-              </div>
-            </div>
-            <div class="ld-trigger-meta">
-              <div class="ld-count">35 <span data-en="modules" data-id="modul">modul</span></div>
-              <div class="ld-chevron" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </div>
-            </div>
-          </button>
-          <div class="ld-accordion-body" id="bodyDqlab" role="region" aria-labelledby="triggerDqlab">
-            <div class="ld-accordion-inner">
-              <div class="ld-group-label" data-en="Projects" data-id="Proyek">Proyek</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Project Data Analysis for Retail: Sales Performance Report</div>
-                <div class="ld-chip">Project Data Analysis for B2B Retail: Customer Analytics Report</div>
-              </div>
-              <div class="ld-group-label">Python & Data Science</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Introduction to Data Science with Python</div>
-                <div class="ld-chip">Guide to Learn Python with AI at DQLab</div>
-                <div class="ld-chip">Python Fundamental for Data Science</div>
-                <div class="ld-chip">Python for Data Professional Beginner (Part 1–3)</div>
-                <div class="ld-chip">Exploratory Data Analysis with Python for Beginner</div>
-                <div class="ld-chip">Fundamental Data Visualization with Python</div>
-                <div class="ld-chip">Data Visualization with Python Matplotlib (Part 1–2)</div>
-                <div class="ld-chip">Pengantar Storytelling dengan Visualisasi menggunakan Python</div>
-              </div>
-              <div class="ld-group-label">SQL</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Guide to Learn SQL with AI at DQLab</div>
-                <div class="ld-chip">Fundamental SQL Using SELECT Statement</div>
-                <div class="ld-chip">Fundamental SQL Using FUNCTION and GROUP BY</div>
-                <div class="ld-chip">Menggunakan Subquery pada SQL</div>
-                <div class="ld-chip">Mengolah Data Tanggal dan Jam Dasar dengan MySQL</div>
-                <div class="ld-chip">Menggunakan ORDER BY untuk Mengurutkan Data</div>
-                <div class="ld-chip">Mengolah Data Teks Unstructured dengan REGEX pada SQL</div>
-              </div>
-              <div class="ld-group-label" data-en="Business Analytics" data-id="Analitik Bisnis">Analitik Bisnis</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Business Insight Visualization</div>
-                <div class="ld-chip">Margin and Stock Risk</div>
-                <div class="ld-chip">Funnel Conversion Analysis</div>
-                <div class="ld-chip">SKU Outlier Exploration</div>
-                <div class="ld-chip">Sales Spike Business Case Overview</div>
-                <div class="ld-chip">Master Data and Handling Duplicate Data with LinkR</div>
-              </div>
-              <div class="ld-group-label">Excel</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Cara Cepat dan Mudah Menguasai Excel Dasar</div>
-                <div class="ld-chip">Bootcamp Data Analyst with Excel — Batch 16</div>
-              </div>
-            </div>
+    <!-- Harisenin.com -->
+    <div class="reveal ld-accordion">
+      <button class="ld-accordion-trigger" id="triggerHarisenin">
+        <div class="ld-trigger-left">
+          <div class="ld-source-pill harisenin">Harisenin.com</div>
+          <div class="ld-preview-text" data-en="Advanced Excel & Analytical Thinking"
+            data-id="Excel Lanjutan & Berpikir Analitis">Advanced Excel & Analytical Thinking</div>
+        </div>
+        <div class="ld-trigger-right">
+          <div class="ld-count">BOOTCAMP <span style="font-size: 0.6rem; color: var(--ink-muted);" data-en="GRADUATE"
+              data-id="LULUSAN">GRADUATE</span></div>
+        </div>
+        <div class="ld-chevron">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </div>
+      </button>
+      <div class="ld-accordion-body" id="bodyHarisenin">
+        <div class="ld-accordion-inner">
+          <div class="ld-group-label">Bootcamp Certification</div>
+          <div class="ld-chip-grid">
+            <a href="https://drive.google.com/file/d/1DvLSVH52QFuwPRn8YX9RLPaNlitVm0DP/view?usp=sharing" target="_blank"
+              class="ld-chip">MICROSOFT EXCEL BOOTCAMP (Verified Certificate)</a>
+          </div>
+
+
+
+          <div class="ld-group-label" style="margin-top: 1.5rem; opacity: 0.7; font-size: 0.6rem;"
+            data-en="PROGRAM OVERVIEW" data-id="TINJAUAN PROGRAM">PROGRAM OVERVIEW</div>
+          <p style="font-size: 0.75rem; color: var(--ink-dim); line-height: 1.5; margin-top: 0.5rem; max-width: 600px;"
+            data-en="Intensive program focusing on simulating real-world project planning, from raw data processing to advanced pivot dashboards and innovative visual storytelling."
+            data-id="Program intensif yang berfokus pada simulasi perencanaan proyek dunia nyata, mulai dari pemrosesan data mentah hingga dasbor pivot lanjutan dan penceritaan visual yang inovatif.">
+            Intensive program focusing on simulating real-world project planning, from raw data processing to advanced
+            pivot dashboards and innovative visual storytelling.
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- DQLab -->
+    <div class="reveal ld-accordion">
+      <button class="ld-accordion-trigger" id="triggerDqlab">
+        <div class="ld-trigger-left">
+          <div class="ld-source-pill dqlab">DQLab</div>
+          <div class="ld-preview-text" data-en="Data Science, SQL & Business Analytics"
+            data-id="Ilmu Data, SQL & Analitik Bisnis">Data Science, SQL & Business Analytics</div>
+        </div>
+        <div class="ld-trigger-right">
+          <div class="ld-count">30+ <span style="font-size: 0.6rem; color: var(--ink-muted);" data-en="CERTIFICATES"
+              data-id="SERTIFIKAT">CERTIFICATES</span></div>
+        </div>
+        <div class="ld-chevron">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </div>
+      </button>
+      <div class="ld-accordion-body" id="bodyDqlab">
+        <div class="ld-accordion-inner">
+          <div class="ld-group-label">Business Case & Projects</div>
+          <div class="ld-chip-grid">
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABBIVGJBRUJ" target="_blank"
+              class="ld-chip">Business Insight Visualization</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABMSRKWNWNH" target="_blank"
+              class="ld-chip">Margin and Stock Risk</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABSSBCOOUAUIV" target="_blank"
+              class="ld-chip">Funnel Conversion Analysis</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABSSBCOOSMJEK" target="_blank"
+              class="ld-chip">SKU Outlier Exploration</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABSSBCOVTFWNV" target="_blank"
+              class="ld-chip">Sales Spike Business Case Overview</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABLMDHDDBKSLFO" target="_blank"
+              class="ld-chip">Master Data and Handling Duplicate Data with LinkR</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABPRJC4HBQPTW" target="_blank"
+              class="ld-chip">Project Data Analysis for Retail: Sales Performance Report</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABPRJ10HSQHLH" target="_blank"
+              class="ld-chip">Project Data Analysis for B2B Retail: Customer Analytics Report</a>
+          </div>
+
+          <div class="ld-group-label">Python & Data Visualization</div>
+          <div class="ld-chip-grid">
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABINTP1UAHPJT" target="_blank"
+              class="ld-chip">Data Visualization with Python Matplotlib Beginner - Part 2</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABDTWP1OWTGKN" target="_blank"
+              class="ld-chip">Data Visualization with Python Matplotlib Beginner - Part 1</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABINTP1HUTDWW" target="_blank"
+              class="ld-chip">Fundamental Data Visualization with Python</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABSDVP1TRJCJA" target="_blank"
+              class="ld-chip">Storytelling dengan Visualisasi menggunakan Python</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABINTP1HPFLOT" target="_blank"
+              class="ld-chip">Exploratory Data Analysis with Python for Beginner</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABINTP1HHLLTP" target="_blank"
+              class="ld-chip">Python for Data Professional Beginner - Part 3</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABINTP1LRNKAW" target="_blank"
+              class="ld-chip">Python for Data Professional Beginner - Part 2</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABINTP1OQMVNG" target="_blank"
+              class="ld-chip">Python for Data Professional Beginner - Part 1</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABINTP1OPBVQE" target="_blank"
+              class="ld-chip">Python Fundamental for Data Science</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABAI001VKBVSJ" target="_blank"
+              class="ld-chip">Guide to Learn Python with AI at DQLab</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABINTP1EHTGNS" target="_blank"
+              class="ld-chip">Introduction to Data Science with Python</a>
+          </div>
+
+          <div class="ld-group-label">SQL & Database</div>
+          <div class="ld-chip-grid">
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABMDTLRPQHGKI" target="_blank"
+              class="ld-chip">Unstructured Data with REGEX on SQL</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABMDTDSMPOJLC" target="_blank"
+              class="ld-chip">Using ORDER BY to Sort Data</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABMDTDSIEGJBU" target="_blank"
+              class="ld-chip">Date and Time Data with MySQL</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABMSSQLEELHDG" target="_blank"
+              class="ld-chip">Using Subquery on SQL</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABMDTDSVRQVBN" target="_blank"
+              class="ld-chip">Logical Operators in SQL</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABMDTDSMRASFM" target="_blank"
+              class="ld-chip">Basic Text Data on MySQL</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABFSQL3DIPIFV" target="_blank"
+              class="ld-chip">Fundamental SQL Group By and Having</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABSQLFNEBIPSDJ" target="_blank"
+              class="ld-chip">Database - SQL Track Completion</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABSQLT2IKJQIJ" target="_blank"
+              class="ld-chip">SQL Using INNER JOIN and UNION</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABSQLT2TEVWML" target="_blank"
+              class="ld-chip">SQL Using FUNCTION and GROUP BY</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABSQLT1VFJFTT" target="_blank"
+              class="ld-chip">SQL Using SELECT Statement</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABAI003MIFGHO" target="_blank"
+              class="ld-chip">Guide to Learn SQL with AI at DQLab</a>
+          </div>
+
+          <div class="ld-group-label">Excel & Bootcamps</div>
+          <div class="ld-chip-grid">
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABBDAEB16KHIQQE" target="_blank"
+              class="ld-chip">Bootcamp Data Analyst with Excel B16 Completion</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABBDAEB16SREICM" target="_blank"
+              class="ld-chip">Bootcamp Data Analyst with Excel B16 Participation</a>
+            <a href="https://academy.dqlab.id/Certificate_check/result/DQLABQEXL1GISVAK" target="_blank"
+              class="ld-chip">Menguasai Excel Dasar</a>
           </div>
         </div>
       </div>
+    </div>
 
-      <!-- Microsoft Learn Accordion -->
-      <div class="reveal ld-block" style="margin-top:1.25rem;">
-        <div class="ld-accordion">
-          <button class="ld-accordion-trigger" id="triggerMslearn" aria-expanded="false" aria-controls="bodyMslearn">
-            <div class="ld-trigger-left">
-              <div class="ld-source-pill mslearn">Microsoft Learn</div>
-              <div class="ld-preview-text" data-en="Azure AI, Cloud Foundations, Semantic Kernel, AKS"
-                data-id="Azure AI, Cloud Foundations, Semantic Kernel, AKS">
-                Azure AI, Cloud Foundations, Semantic Kernel, AKS
-              </div>
-            </div>
-            <div class="ld-trigger-meta">
-              <div class="ld-count">40+ <span data-en="badges" data-id="lencana">lencana</span></div>
-              <div class="ld-chevron" aria-hidden="true">
-                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-                  <path d="M6 9l6 6 6-6" />
-                </svg>
-              </div>
-            </div>
-          </button>
-          <div class="ld-accordion-body" id="bodyMslearn" role="region" aria-labelledby="triggerMslearn">
-            <div class="ld-accordion-inner">
-              <div class="ld-group-label">Azure AI Fundamentals</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Fundamental AI Concepts</div>
-                <div class="ld-chip">Introduction to Machine Learning Concepts</div>
-                <div class="ld-chip">Get Started with Azure AI Services</div>
-                <div class="ld-chip">Computer Vision, Facial Recognition & OCR</div>
-                <div class="ld-chip">Text Analysis & Language Service</div>
-                <div class="ld-chip">Conversational Language Understanding</div>
-                <div class="ld-chip">Question Answering with the Language Service</div>
-                <div class="ld-chip">Speech on Azure</div>
-                <div class="ld-chip">Language Translation</div>
-                <div class="ld-chip">Azure AI Document Intelligence</div>
-                <div class="ld-chip">Azure AI Search & Knowledge Mining</div>
-              </div>
-              <div class="ld-group-label">Generative AI & Agents</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Introduction to Generative AI Concepts</div>
-                <div class="ld-chip">Plan and Prepare to Develop AI Solutions on Azure</div>
-                <div class="ld-chip">Implement a Responsible Generative AI Solution</div>
-                <div class="ld-chip">Apply Prompt Engineering with Azure OpenAI Service</div>
-                <div class="ld-chip">Get Started with AI Agent Development on Azure</div>
-              </div>
-              <div class="ld-group-label">Azure Cloud Foundations</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Describe Cloud Computing & Service Types</div>
-                <div class="ld-chip">Core Architectural Components of Azure</div>
-                <div class="ld-chip">Azure Compute and Networking Services</div>
-                <div class="ld-chip">Azure Storage Services</div>
-                <div class="ld-chip">Azure Identity, Access & Security</div>
-                <div class="ld-chip">Cost Management in Azure</div>
-                <div class="ld-chip">Governance, Compliance & Deployment Tools</div>
-                <div class="ld-chip">Monitoring Tools in Azure</div>
-              </div>
-              <div class="ld-group-label">Semantic Kernel SDK</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Build Your Kernel</div>
-                <div class="ld-chip">Run Prompts with Semantic Kernel</div>
-                <div class="ld-chip">Create Semantic Kernel Plugins</div>
-                <div class="ld-chip">Apply Filters on Functions</div>
-                <div class="ld-chip">Guided Project: DevOps Assistant with Semantic Kernel SDK</div>
-              </div>
-              <div class="ld-group-label">Azure Kubernetes Service (AKS)</div>
-              <div class="ld-chip-grid">
-                <div class="ld-chip">Plan an AKS Deployment</div>
-                <div class="ld-chip">Deploy and Use Azure Container Registry</div>
-                <div class="ld-chip">Deploy an AKS Cluster</div>
-                <div class="ld-chip">Configure an AKS Cluster</div>
-                <div class="ld-chip">Deploy Applications to AKS</div>
-                <div class="ld-chip">Configure Scaling in AKS</div>
-                <div class="ld-chip">Guided Project: Deploy Applications to AKS</div>
-              </div>
-            </div>
+    <!-- Microsoft Learn -->
+    <div class="reveal ld-accordion">
+      <button class="ld-accordion-trigger" id="triggerMslearn">
+        <div class="ld-trigger-left">
+          <div class="ld-source-pill">Microsoft Learn</div>
+          <div class="ld-preview-text">Azure AI, Cloud & DevOps Achievements</div>
+        </div>
+        <div class="ld-trigger-right">
+          <div class="ld-count">50+ <span style="font-size: 0.6rem; color: var(--ink-muted);">ACHIEVEMENTS</span></div>
+        </div>
+        <div class="ld-chevron">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M6 9l6 6 6-6" />
+          </svg>
+        </div>
+      </button>
+      <div class="ld-accordion-body" id="bodyMslearn">
+        <div class="ld-accordion-inner">
+          <div class="ld-group-label">Trofi (Trophies)</div>
+          <div class="ld-chip-grid">
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/ZB6JTXG2?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Mengembangkan aplikasi AI generatif dengan Azure OpenAI dan Semantic
+              Kernel</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/8ZK282VW?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menyebarkan kontainer dengan menggunakan Azure Kubernetes Service
+              (AKS)</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/NVPU758F?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Microsoft Azure: Menjelaskan manajemen dan tata kelola
+              Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/JUWP6ZZT?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Microsoft Azure: Menjelaskan arsitektur dan layanan Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/4GUVSY3K?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Microsoft Azure Fundamentals: Menjelaskan konsep cloud</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/H7MBCV68?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Microsoft Azure AI: AI Generatif</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/UR24GZB3?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Microsoft Azure AI: Kecerdasan Dokumen dan Pengumpulan
+              Pengetahuan</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/FM4SHPBX?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Microsoft Azure AI: Pemrosesan Bahasa Alami</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/7KTCXJKZ?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar AI Microsoft Azure: Visi Komputer</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/D98RPHSJ?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Microsoft Azure AI: Ringkasan AI</a>
+          </div>
+
+          <div class="ld-group-label">Lencana (Badges)</div>
+          <div class="ld-chip-grid">
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/E5HG6ZUP?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Proyek terpandu - Membuat Asisten DevOps dengan Semantic Kernel SDK</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/BCFU3QHD?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menerapkan filter pada fungsi</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/URE7ZLY3?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Membuat Plugin Semantik Kernel</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/PL86C2J4?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjalankan perintah dengan Kernel Semantik</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/3APZ2LUH?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Bangun kernel Anda</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/ZB6DZDD2?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Proyek Terpandu - Menyebarkan aplikasi ke Azure Kubernetes Service</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/H74ZHZA8?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Mengonfigurasi penskalakan di Azure Kubernetes Service</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/9YQR9RNU?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menyebarkan aplikasi ke Azure Kubernetes Service</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/8ZK282YW?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Mengonfigurasi kluster Azure Kubernetes Service</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/NVDMNMRF?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menyebarkan kluster Azure Kubernetes Service</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/UREAUAH3?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menyebarkan dan menggunakan Azure Container Registry</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/3AP73A3H?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Merencanakan penyebaran Azure Kubernetes Service</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/8ZQCRTHW?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan alat pemantauan di Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/UR2LFBG3?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan fitur dan alat untuk mengelola dan menyebarkan sumber daya
+              Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/3AVGXDGH?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan fitur dan alat di Azure terkait tata kelola dan kepatuhan</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/A4JNQ9W7?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan manajemen biaya di Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/FM43ZLGX?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan identitas, akses, dan keamanan Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/3AVGXDBH?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan layanan penyimpanan Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/CX7SW4E9?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan layanan komputasi dan jaringan Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/H7M6YJ48?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan komponen arsitektur utama Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/YEB8V6BR?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan jenis layanan cloud</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/W2E9ASQN?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menjelaskan manfaat menggunakan layanan cloud</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/2D5Y4HTV?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Deskripsikan komputasi cloud</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/E5CW262P?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Mulai menggunakan pengembangan agen AI di Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/BCHYE3MD?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menerapkan solusi AI generatif yang bertanggung jawab di Azure AI
+              Foundry</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/8ZQD9MLW?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Merencanakan dan bersiap untuk mengembangkan solusi AI di Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/NVPT3EGF?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Pengantar konsep AI generatif</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/QS68ZGFE?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Penambangan Pengetahuan dan Pencarian Azure AI</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/UR24GZE3?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Kecerdasan Dokumen Azure AI</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/9YZPL7MU?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-dasar terjemahan bahasa</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/JUWA48NT?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Mulai menggunakan ucapan di Azure</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/3AVK62VH?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-dasar pemahaman bahasa percakapan</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/CX7E5AA9?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-dasar jawaban atas pertanyaan dengan Layanan Bahasa</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/FM4SHPEX?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Analisis Teks dengan Layanan Bahasa</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/H7MBCVZ8?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-dasar pengenalan karakter optik</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/XQK584MY?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Pengenalan Wajah</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/W2EJUQRN?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Dasar-Dasar Computer Vision</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/2D5URSEV?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Mulai menggunakan layanan Azure AI</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/K63XQUDB?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Pengantar konsep pembelajaran mesin</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/XQP696HY?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Menerapkan rekayasa prompt dengan Layanan Azure OpenAI</a>
+            <a href="https://learn.microsoft.com/api/achievements/share/id-id/AlMaudinNurCh-7039/H72F9JX8?sharingId=CF2D1FAA9577B994"
+              target="_blank" class="ld-chip">Konsep AI Dasar</a>
           </div>
         </div>
       </div>
@@ -680,20 +690,16 @@
 ════════════════════════════════════════════════ -->
   <section id="contact">
     <div class="contact-inner reveal">
-      <p class="section-label" data-en="Get in Touch" data-id="Hubungi Saya">Hubungi Saya</p>
-      <h2 class="section-title" data-en="Let's Connect" data-id="Mari Terhubung">Mari Terhubung</h2>
-      <p class="section-subtitle" style="margin:0 auto 2.5rem;"
-        data-en="Open to collaboration, advisory roles, and knowledge-sharing opportunities in data systems and digital governance."
-        data-id="Terbuka untuk kolaborasi, peran konsultatif, dan peluang berbagi pengetahuan di bidang sistem data dan tata kelola digital.">
-        Terbuka untuk kolaborasi, peran konsultatif, dan peluang berbagi pengetahuan di bidang sistem data dan tata
-        kelola digital.
+      <p class="section-label" data-en="Get in Touch" data-id="Hubungi Saya">Get in Touch</p>
+      <h2 class="section-title" data-en="Let's Build the Future" data-id="Mari Membangun Masa Depan">Let's Build the
+        Future</h2>
+      <p class="section-subtitle"
+        data-en="Open for high-level collaborations, architectural advisory, and knowledge systems design."
+        data-id="Terbuka untuk kolaborasi tingkat tinggi, konsultasi arsitektur, dan desain sistem pengetahuan.">
+        Open for high-level collaborations, architectural advisory, and knowledge systems design.
       </p>
       <div class="contact-link-group">
-        <a href="https://linkedin.com" target="_blank" rel="noreferrer" class="btn-primary" style="align-self:center;">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor">
-            <path
-              d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-          </svg>
+        <a href="https://www.linkedin.com/in/almaudin/" target="_blank" rel="noreferrer" class="btn-primary">
           LinkedIn
         </a>
       </div>
@@ -702,11 +708,19 @@
 
   <!-- ─── FOOTER ─── -->
   <footer>
-    <span>© 2025 Almaudin</span>
-    <span data-en="Systems & Data Professional" data-id="Profesional Sistem & Data">Profesional Sistem & Data</span>
-    <span class="footer-version">v4.1.0</span>
+    <div class="footer-left">
+      <span>© 2026 Almaudin</span>
+    </div>
+    <div class="footer-center">
+      <span data-en="Systems & Data Architect" data-id="Arsitek Sistem & Data">Systems & Data Architect</span>
+    </div>
+    <div class="footer-right">
+      <span class="footer-version">v5.0.0 — Premium Edition</span>
+    </div>
   </footer>
 
+  <script src="assets/js/data.js"></script>
+  <script src="assets/js/animations.js"></script>
   <script src="assets/js/main.js"></script>
 </body>
 

@@ -1,31 +1,3 @@
-/* ─── SCROLL PROGRESS & NAV SHRINK ─── */
-const bar = document.getElementById('progress-bar');
-const nav = document.getElementById('navbar');
-
-window.addEventListener('scroll', () => {
-  const pct = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight)) * 100;
-  bar.style.width = pct + '%';
-  nav.classList.toggle('scrolled', window.scrollY > 60);
-}, { passive: true });
-
-/* ─── REVEAL ON SCROLL ─── */
-const reveals = document.querySelectorAll('.reveal');
-const revealObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
-reveals.forEach(r => revealObserver.observe(r));
-
-/* ─── STAGE BAR ANIMATE ─── */
-const stageBars = document.querySelectorAll('.stage-bar-fill');
-const barObserver = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.width = e.target.style.getPropertyValue('--pct');
-    }
-  });
-}, { threshold: 0.4 });
-stageBars.forEach(b => barObserver.observe(b));
-
 /* ─── ACCORDION ─── */
 function setupAccordion(triggerId, bodyId) {
   const trigger = document.getElementById(triggerId);
@@ -51,8 +23,43 @@ function setupAccordion(triggerId, bodyId) {
     }
   });
 }
+setupAccordion('triggerHarisenin', 'bodyHarisenin');
 setupAccordion('triggerDqlab',   'bodyDqlab');
 setupAccordion('triggerMslearn', 'bodyMslearn');
+
+/* ─── INTERACTIVE FEATURES ─── */
+// Snippet Animation Logic
+// Note: 'snippets' array is loaded via data.js
+
+const container = document.getElementById('snippetContainer');
+if (container && typeof snippets !== 'undefined') {
+  function createSnippet() {
+    const s = snippets[Math.floor(Math.random() * snippets.length)];
+    const el = document.createElement('div');
+    el.className = `snippet ${s.type}`;
+    el.textContent = s.text;
+    el.style.left = Math.random() * 80 + '%';
+    el.style.top = Math.random() * 80 + '%';
+    el.style.animationDelay = Math.random() * 2 + 's';
+    container.appendChild(el);
+    setTimeout(() => el.remove(), 4000);
+  }
+  setInterval(createSnippet, 800);
+}
+
+// Magnetic Buttons
+const buttons = document.querySelectorAll('.btn-primary, .btn-outline, .lang-btn');
+buttons.forEach(btn => {
+  btn.addEventListener('mousemove', (e) => {
+    const rect = btn.getBoundingClientRect();
+    const x = e.clientX - rect.left - rect.width / 2;
+    const y = e.clientY - rect.top - rect.height / 2;
+    btn.style.transform = `translate(${x * 0.3}px, ${y * 0.3}px)`;
+  });
+  btn.addEventListener('mouseleave', () => {
+    btn.style.transform = '';
+  });
+});
 
 /* ─── LANGUAGE TOGGLE ─── */
 let currentLang = 'ID';
@@ -63,10 +70,14 @@ function applyLang(lang) {
     const val = lang === 'ID' ? el.getAttribute('data-id') : el.getAttribute('data-en');
     if (val) el.textContent = val;
   });
-  langBtn.textContent = lang === 'ID' ? 'EN' : 'ID';
+  if (langBtn) {
+    langBtn.textContent = lang === 'ID' ? 'EN' : 'ID';
+  }
   currentLang = lang;
   document.documentElement.lang = lang === 'ID' ? 'id' : 'en';
 }
 
-langBtn.addEventListener('click', () => applyLang(currentLang === 'ID' ? 'EN' : 'ID'));
+if (langBtn) {
+  langBtn.addEventListener('click', () => applyLang(currentLang === 'ID' ? 'EN' : 'ID'));
+}
 applyLang('ID');
