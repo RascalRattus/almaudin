@@ -117,21 +117,47 @@
 .lang-btn {
   font-family: 'DM Mono', monospace;
   font-size: 0.65rem;
-  padding: 0.4rem 1rem;
+  padding: 0.25rem 0.35rem;
   border: 1px solid var(--surface-border);
   background: rgba(255, 255, 255, 0.03);
   color: var(--ink-dim);
   cursor: pointer;
   border-radius: 100px;
-  letter-spacing: 0.1em;
-  transition: all 0.3s var(--ease-premium);
+  letter-spacing: 0.08em;
+  transition: border-color 0.3s var(--ease-premium);
   white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 0;
 }
 
 .lang-btn:hover {
-  background: rgba(var(--accent-rgb), 0.1);
   border-color: var(--accent);
-  color: var(--ink);
+}
+
+.lang-btn .lt-en,
+.lang-btn .lt-id {
+  padding: 0.15rem 0.6rem;
+  border-radius: 100px;
+  transition: background 0.25s var(--ease-premium), color 0.25s var(--ease-premium);
+  color: var(--ink-muted);
+}
+
+.lang-btn .lt-sep {
+  color: var(--ink-3);
+  font-size: 0.6rem;
+  line-height: 1;
+}
+
+/* Active state — set via data-lang attribute */
+.lang-btn[data-lang="ID"] .lt-id {
+  background: rgba(var(--accent-rgb), 0.18);
+  color: var(--accent);
+}
+
+.lang-btn[data-lang="EN"] .lt-en {
+  background: rgba(var(--accent-2-rgb), 0.18);
+  color: var(--accent-2);
 }
 
 /* ─── HAMBURGER (mobile only, hidden on desktop) ─── */
@@ -417,7 +443,6 @@ section {
   background: radial-gradient(circle at top right, rgba(255, 255, 255, 0.05), transparent 60%);
   opacity: 0;
   transition: opacity 0.4s;
-  pointer-events: none;
 }
 
 .badge-card:hover {
@@ -886,8 +911,8 @@ section {
   .lang-btn {
     margin-top: 0.5rem;
     width: 100%;
-    padding: 0.75rem;
-    text-align: center;
+    padding: 0.4rem 0.35rem;
+    justify-content: center;
     border-radius: 10px;
   }
 }

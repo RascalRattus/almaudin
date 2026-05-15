@@ -137,7 +137,7 @@ function applyLang(lang) {
     if (val) el.textContent = val;
   });
   if (langBtn) {
-    langBtn.textContent = lang === 'ID' ? 'EN' : 'ID';
+    langBtn.setAttribute('data-lang', lang);
   }
   currentLang = lang;
   document.documentElement.lang = lang === 'ID' ? 'id' : 'en';
