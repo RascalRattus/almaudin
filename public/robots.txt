@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://almaudin.my.id/sitemap.xml
+Sitemap: https://www.almaudin.my.id/sitemap.xml
